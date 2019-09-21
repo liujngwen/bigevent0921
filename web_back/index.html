@@ -138,31 +138,32 @@
       }
     </script>
 
-    <!-- <script src="./js/utils/config.js"></script>
-    <script src="./js/utils/user.js"></script> -->
-
-    <!-- <script>
+    <script src="./js/utils/config.js"></script>
+    <script src="./js/utils/user.js"></script>
+    <script>
+      // 显示管理员信息
       $(function() {
         user.getInfo(function(res) {
-          console.log(res);
-          if (res.code === 200) {
+          if(res.code === 200) {
             $('#userName').html(res.data.nickname);
             $('#userImg').attr('src', res.data.user_pic);
           }
         });
       });
-      // 给按钮添加点击事件
-      // 1.调用 退出功能
+      // 给按钮添加点击事件 退出,取消a的默认事件
       $('#btnLogout').click(function() {
-        // todos:用模态框来代替
-        if (window.confirm('确定要退出吗？')) {
+        // 用模态框代替弹框
+        if(window.confirm('确定要退出吗？')) {
           user.logout(function(res) {
-            if (res.code == 200) {
-              window.location.href = './login.html';
+            if(res.code === 200) {
+              window.location.href = './login.html'
             }
           });
         }
       });
-    </script> -->
+    
+    
+    
+    </script>
   </body>
 </html>

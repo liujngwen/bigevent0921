@@ -4,8 +4,9 @@ var urlList = {
   user_logout : base_url + '/admin/logout',
   user_info: base_url + '/admin/getuser',
   
-  category: base_url + '/admin/category_search',
-  add: base_url + '/admin/category_add',
+  show: base_url + '/admin/category_search',
   delete: base_url + '/admin/category_delete',
+  edit: base_url + '/admin/category_edit',
+  add: base_url + '/admin/category_add',
 };
 

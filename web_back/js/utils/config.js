@@ -8,5 +8,9 @@ var urlList = {
   delete: base_url + '/admin/category_delete',
   edit: base_url + '/admin/category_edit',
   add: base_url + '/admin/category_add',
+
+  show_list: base_url + '/admin/search',
+  delete_list: base_url + '/admin/article_delete',
+  add_list: base_url + '/admin/article_publish'
 };
 

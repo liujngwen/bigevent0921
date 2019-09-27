@@ -22,6 +22,18 @@ var articleAll = {
                 callback(res);
             }
         });
-    }
+    },
+    edit: function (fd, callback) {
+        $.ajax({
+            url: urlList.edit_list,
+            type: 'post',
+            data: fd,
+            processData: false, // 让jquery不要处理数据。它无法处理formData对象
+            contentType: false, // 不要额外去设置请求头。它有自己的请求头
+            success: function (res) {
+                callback(res);
+            }
+        });
+    },
 
 }

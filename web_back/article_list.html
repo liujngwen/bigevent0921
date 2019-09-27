@@ -251,7 +251,7 @@
             <td class="text-center">{{item.date}}</td>
             <td class="text-center">{{item.state}}</td>
             <td class="text-center">
-                <a href="article_edit.html" class="btn btn-default btn-xs">编辑</a>
+                <a href="./article_edit.html?id={{item.id}}" class="btn btn-default btn-xs">编辑</a>
                 <a data-id="{{item.id}}" href="javascript:;" class="del btn btn-danger btn-xs">删除</a>
             </td>
         </tr>
@@ -310,7 +310,7 @@
             getAndShow();
             function getAndShow() {
                 articleAll.show({ type: type, state: state, page: currentPage }, function (res) {
-                    // console.log(res);
+                    console.log(res);
                     if (res.code === 200) {
                         var htmlStr = template('tmp', res);
                         $('#tbodyContent').html(htmlStr);

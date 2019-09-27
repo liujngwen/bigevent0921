@@ -55,8 +55,8 @@
 
     <div class="main_con clearfix">
         <div class="left_con">
-            <ul class="focus_list">
-                <li class="first">
+            <ul class="focus_list" id="ul_content">
+                <!-- <li class="first">
                     <a href="#"><img src="images/pic01.jpg" alt=""></a>
                     <p>图片说明</p>
                 </li>
@@ -75,7 +75,7 @@
                 <li>
                     <a href="#"><img src="images/pic06.jpg" alt=""></a>
                     <p>图片说明</p>
-                </li>
+                </li> -->
             </ul>
 
             <div class="common_title">
@@ -215,12 +215,43 @@
             <span>|</span>
             <a href="#">招聘人才</a>
             <span>|</span>
-            <a href="#">友情链接</a>		
+            <a href="#">友情链接</a>
         </div>
-        <p>CopyRight © 2019 深圳大事件信息技术股份有限公司   All Rights Reserved</p>
-        <p>电话：0755-****888    粤ICP备*******8号</p>
+        <p>CopyRight © 2019 深圳大事件信息技术股份有限公司 All Rights Reserved</p>
+        <p>电话：0755-****888 粤ICP备*******8号</p>
     </div>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/utlis/config.js"></script>
+    <script src="./js/utlis/article.js"></script>
+    <script src="./js/template-web.js"></script>
 
+    <script id="tmp" type="text/html">
+        {{each data item index}}
+            {{if index === 0}}
+            <li class="first">
+                <a href="./article.html?id={{item.id}}"><img src="{{item.cover}}" alt="{{item.title}}"></a>
+                <p>图片说明</p>
+            </li>
+            {{else}}
+            <li>
+                <a href="./article.html?id={{item.id}}"><img src="{{item.cover}}" alt="{{item.title}}"></a>
+                <p>图片说明</p>
+            </li>
+            {{/if}}
+        {{/each}}
+    </script>
+    <script>
+        $(function () {
+            article.show({perpage: 5}, function (res) {
+                // console.log(res);
+                if(res.code === 200) {
+                    var htmlStr = template('tmp', res);
+                    $('#ul_content').html(htmlStr);
+                }
+            });
+        });
+
+    </script>
 </body>
 
 </html>

@@ -11,6 +11,7 @@ var urlList = {
 
   show_list: base_url + '/admin/search',
   delete_list: base_url + '/admin/article_delete',
-  add_list: base_url + '/admin/article_publish'
+  add_list: base_url + '/admin/article_publish',
+  edit_list: base_url + '/admin/article_edit'
 };
 
